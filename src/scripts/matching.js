@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progressSteps = Array.from(document.querySelectorAll('.progress-step'));
     const nextButtons = document.querySelectorAll('.next-step');
     const prevButtons = document.querySelectorAll('.prev-step');
+    const formContainer = document.querySelector('.matching-container'); // Get the container element
     
     let currentStep = 0;
     
@@ -44,11 +45,20 @@ document.addEventListener('DOMContentLoaded', function() {
             const therapyTopics = formData.getAll('therapy-topics');
             formValues['therapy-topics'] = therapyTopics;
             
+            // Save form data to localStorage for database simulation
+            localStorage.setItem('matching_form_data', JSON.stringify(formValues));
+            
             // In a real application, this would send the data to the server
             console.log('Form submitted with values:', formValues);
             
-            // For prototype purposes, redirect to therapist profile
-            window.location.href = 'therapist-profile.html';
+            // Show loading indicator
+            showLoadingOverlay('Buscando terapeutas compatibles...');
+            
+            // Simulate API request with timeout
+            setTimeout(() => {
+                // Redirect to therapist profile page
+                window.location.href = 'therapist-profile.html';
+            }, 2000);
         }
     });
     
@@ -62,8 +72,23 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update progress bar and steps
         updateProgressBar();
         
-        // Scroll to top of form
-        form.scrollIntoView({ behavior: 'smooth' });
+        // Scroll to the top of the form container instead of the entire form
+        // This prevents jumping to the bottom of the page
+        const scrollOptions = { 
+            behavior: 'smooth',
+            block: 'start' 
+        };
+        
+        // Smoothly scroll the question into view rather than the entire form
+        if (formContainer) {
+            formContainer.scrollIntoView(scrollOptions);
+        } else {
+            // Fallback to the previous behavior if container not found
+            const questionElement = steps[currentStep];
+            if (questionElement) {
+                questionElement.scrollIntoView(scrollOptions);
+            }
+        }
     }
     
     // Update progress bar and steps indicators
@@ -129,5 +154,65 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         return isValid;
+    }
+    
+    // Show loading overlay with custom message
+    function showLoadingOverlay(message) {
+        // Create loading overlay element
+        const overlay = document.createElement('div');
+        overlay.className = 'loading-overlay';
+        
+        // Create loading spinner and message
+        overlay.innerHTML = `
+            <div class="loading-container">
+                <div class="loading-spinner"></div>
+                <p class="loading-message">${message}</p>
+            </div>
+        `;
+        
+        // Add to document
+        document.body.appendChild(overlay);
+        
+        // Add styling if needed
+        const style = document.createElement('style');
+        style.textContent = `
+            .loading-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(255, 255, 255, 0.9);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+            }
+            .loading-container {
+                text-align: center;
+                padding: 20px;
+                border-radius: 10px;
+                background-color: white;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+            .loading-spinner {
+                margin: 0 auto 15px;
+                width: 40px;
+                height: 40px;
+                border: 4px solid rgba(0, 130, 255, 0.1);
+                border-radius: 50%;
+                border-top-color: #0082ff;
+                animation: spin 1s ease-in-out infinite;
+            }
+            .loading-message {
+                font-size: 18px;
+                color: #333;
+                margin: 0;
+            }
+            @keyframes spin {
+                to { transform: rotate(360deg); }
+            }
+        `;
+        document.head.appendChild(style);
     }
 });

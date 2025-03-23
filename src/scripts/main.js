@@ -21,9 +21,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mobile navigation toggle (to be implemented with hamburger menu)
-    // For now, we'll just set up basic interactive elements
-    
     // Add animation class to elements when they come into view
     const animateOnScroll = function() {
         const elements = document.querySelectorAll('.step, .feature-card');
@@ -42,11 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateOnScroll);
     animateOnScroll(); // Run once on page load
     
-    // Prototype user interactions - for demonstration purposes
-    const authButtons = document.querySelectorAll('.auth-buttons a, .hero-buttons a');
-    
-    authButtons.forEach(button => {
+    // Only add placeholder alerts to buttons that don't lead to implemented pages
+    document.querySelectorAll('a.btn').forEach(button => {
         button.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Allow navigation to implemented pages
+            if (href === 'matching.html' || href === 'therapist-profile.html' || href === 'index.html' || href === '/' || href.startsWith('#')) {
+                return; // Let these links work normally
+            }
+            
+            // Block other links with placeholder message
             e.preventDefault();
             alert('Esta funcionalidad estará disponible en la versión completa. | This functionality will be available in the full version.');
         });

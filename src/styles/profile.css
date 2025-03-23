@@ -1,0 +1,370 @@
+/* Therapist Profile Styles */
+
+.therapist-profile {
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xxl);
+}
+
+/* Profile Header */
+.profile-header {
+  margin-bottom: var(--space-xl);
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.profile-header-content {
+  padding: var(--space-lg);
+}
+
+.back-button {
+  margin-bottom: var(--space-md);
+}
+
+.back-button .btn {
+  padding: 0.5rem 1rem;
+}
+
+.profile-header-main {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.profile-photo {
+  flex: 0 0 150px;
+}
+
+.photo-placeholder {
+  width: 150px;
+  height: 150px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.name-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.name-rating h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.stars {
+  color: var(--warning);
+  font-size: 1.2rem;
+}
+
+.rating-number {
+  color: var(--gray);
+}
+
+.specialization {
+  font-size: 1.1rem;
+  color: var(--gray);
+  margin-bottom: var(--space-md);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: rgba(69, 123, 157, 0.1);
+  color: var(--secondary);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.experience, .language {
+  color: var(--dark);
+  margin-bottom: var(--space-xs);
+}
+
+.match-score {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.match-circle {
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.match-score p {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+/* Profile Content */
+.profile-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-xl);
+}
+
+.profile-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.profile-section {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+}
+
+.profile-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  color: var(--accent);
+}
+
+.profile-section ul {
+  margin-bottom: var(--space-md);
+  padding-left: var(--space-lg);
+}
+
+.profile-section ul li {
+  margin-bottom: var(--space-xs);
+  list-style-type: disc;
+}
+
+/* Credentials List */
+.credentials-list {
+  padding-left: 0 !important;
+}
+
+.credentials-list li {
+  display: flex;
+  margin-bottom: var(--space-md) !important;
+  list-style-type: none !important;
+}
+
+.credential-year {
+  flex: 0 0 60px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.credential-detail h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.credential-detail p {
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+/* Reviews */
+.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.review {
+  background-color: rgba(241, 250, 238, 0.5);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-xs);
+}
+
+.review-header h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+.review-stars {
+  color: var(--warning);
+}
+
+.review-date {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: var(--space-sm);
+}
+
+.review-text {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+/* Sidebar */
+.profile-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.sidebar-card {
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg);
+}
+
+.sidebar-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-md);
+  color: var(--accent);
+}
+
+/* Booking Card */
+.session-types {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.session-type {
+  position: relative;
+}
+
+.session-type input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.session-type label {
+  display: block;
+  padding: var(--space-md);
+  border: 2px solid rgba(69, 123, 157, 0.2);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.session-type input[type="radio"]:checked + label {
+  border-color: var(--primary);
+  background-color: rgba(230, 57, 70, 0.05);
+}
+
+.session-type label h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-xs);
+}
+
+.session-type label p {
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+.calendar-preview {
+  margin-bottom: var(--space-lg);
+}
+
+.calendar-preview h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-md);
+}
+
+.availability-dates {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.date-option {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-sm);
+  border-bottom: 1px solid rgba(69, 123, 157, 0.1);
+}
+
+.date-option .date {
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.date-option .times {
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* Contact Card */
+.contact-card p {
+  margin-bottom: var(--space-md);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .profile-sidebar {
+    order: -1; /* Move sidebar above profile sections on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-header-main {
+    flex-direction: column;
+  }
+  
+  .name-rating {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .rating {
+    margin-top: var(--space-xs);
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-photo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-md);
+  }
+}

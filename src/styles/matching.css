@@ -1,0 +1,303 @@
+/* Matching Questionnaire Styles */
+
+.matching-page {
+  padding: var(--space-xl) 0 var(--space-xxl);
+  background-color: #f8f9fa;
+}
+
+/* Matching Header */
+.matching-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--space-xl);
+}
+
+.matching-header h1 {
+  font-size: 2.5rem;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+.matching-header .subtitle {
+  font-size: 1.2rem;
+  color: var(--gray);
+}
+
+/* Progress Bar */
+.matching-progress {
+  max-width: 600px;
+  margin: 0 auto var(--space-xl);
+}
+
+.progress-bar {
+  height: 8px;
+  background-color: rgba(69, 123, 157, 0.2);
+  border-radius: 4px;
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid rgba(69, 123, 157, 0.3);
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.progress-step.completed {
+  background-color: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+/* Form Container */
+.matching-form {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.form-step {
+  display: none;
+  padding: var(--space-xl);
+}
+
+.form-step.active {
+  display: block;
+}
+
+.form-step h2 {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: var(--space-md);
+}
+
+.form-description {
+  color: var(--gray);
+  margin-bottom: var(--space-lg);
+}
+
+/* Radio Cards */
+.radio-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.radio-card {
+  position: relative;
+}
+
+.radio-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-card label {
+  display: block;
+  padding: var(--space-lg);
+  border: 2px solid rgba(69, 123, 157, 0.2);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.radio-card input[type="radio"]:checked + label {
+  border-color: var(--primary);
+  background-color: rgba(230, 57, 70, 0.05);
+}
+
+.radio-card label h3 {
+  font-size: 1.2rem;
+  margin-bottom: var(--space-sm);
+}
+
+.radio-card label p {
+  color: var(--gray);
+  margin-bottom: 0;
+}
+
+/* Checkboxes */
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.checkbox-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: var(--space-sm);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.checkbox-item label {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--accent);
+}
+
+/* Radio Buttons */
+.radio-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.radio-button {
+  position: relative;
+}
+
+.radio-button input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio-button label {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(69, 123, 157, 0.2);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.radio-button input[type="radio"]:checked + label {
+  border-color: var(--primary);
+  background-color: rgba(230, 57, 70, 0.05);
+  color: var(--primary);
+}
+
+/* Form Select */
+.form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(69, 123, 157, 0.2);
+  border-radius: var(--radius-md);
+  background-color: white;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--dark);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%231d3557' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--secondary);
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgba(69, 123, 157, 0.2);
+  border-radius: var(--radius-md);
+  background-color: white;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: var(--dark);
+  resize: vertical;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--secondary);
+}
+
+/* Form Navigation */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-xl);
+}
+
+.form-navigation button {
+  min-width: 120px;
+}
+
+/* Single Button Case */
+.form-step:first-child .form-navigation {
+  justify-content: flex-end;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .matching-header h1 {
+    font-size: 2rem;
+  }
+  
+  .radio-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-step {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 576px) {
+  .progress-step {
+    width: 24px;
+    height: 24px;
+    font-size: 0.8rem;
+  }
+  
+  .form-navigation {
+    flex-direction: column-reverse;
+    gap: var(--space-md);
+  }
+  
+  .form-navigation button {
+    width: 100%;
+  }
+}

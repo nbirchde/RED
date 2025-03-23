@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuentra tu Terapeuta | RED</title>
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/main.css">
+    <link rel="stylesheet" href="src/styles/matching.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="/">
+                    <img src="src/images/logo.svg" alt="RED Logo" class="main-logo">
+                </a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html#how-it-works">Cómo Funciona</a></li>
+                    <li><a href="index.html#for-clients">Para Clientes</a></li>
+                    <li><a href="index.html#for-therapists">Para Terapeutas</a></li>
+                    <li><a href="index.html#about">Sobre Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="#" class="btn btn-secondary">Iniciar Sesión</a>
+                <a href="#" class="btn btn-primary">Registrarse</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="matching-page">
+        <div class="container">
+            <div class="matching-header">
+                <h1>Encuentra el terapeuta ideal para ti</h1>
+                <p class="subtitle">Responde algunas preguntas para que podamos conectarte con terapeutas que se adapten a tus necesidades específicas.</p>
+            </div>
+
+            <div class="matching-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 20%"></div>
+                </div>
+                <div class="progress-steps">
+                    <span class="progress-step active">1</span>
+                    <span class="progress-step">2</span>
+                    <span class="progress-step">3</span>
+                    <span class="progress-step">4</span>
+                    <span class="progress-step">5</span>
+                </div>
+            </div>
+
+            <form id="matching-form" class="matching-form">
+                <div class="form-step active" id="step-1">
+                    <h2>¿Para quién estás buscando terapia?</h2>
+                    <div class="radio-cards">
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-for" id="for-me" value="for-me" checked>
+                            <label for="for-me">
+                                <h3>Para mí</h3>
+                                <p>Busco ayuda para mis propios desafíos de salud mental.</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-for" id="for-child" value="for-child">
+                            <label for="for-child">
+                                <h3>Para mi hijo/a</h3>
+                                <p>Busco ayuda para un niño/a o adolescente a mi cargo.</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-for" id="for-couple" value="for-couple">
+                            <label for="for-couple">
+                                <h3>Para mi pareja y yo</h3>
+                                <p>Buscamos terapia de pareja para mejorar nuestra relación.</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-for" id="for-family" value="for-family">
+                            <label for="for-family">
+                                <h3>Para mi familia</h3>
+                                <p>Buscamos terapia familiar para mejorar nuestra dinámica.</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-2">
+                    <h2>¿Qué temas te gustaría abordar en terapia?</h2>
+                    <p class="form-description">Selecciona todos los que apliquen. Esto nos ayudará a encontrar terapeutas con experiencia en las áreas que te interesan.</p>
+                    <div class="checkbox-grid">
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="anxiety" value="anxiety">
+                            <label for="anxiety">Ansiedad</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="depression" value="depression">
+                            <label for="depression">Depresión</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="stress" value="stress">
+                            <label for="stress">Estrés</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="grief" value="grief">
+                            <label for="grief">Duelo y pérdida</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="trauma" value="trauma">
+                            <label for="trauma">Trauma</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="relationships" value="relationships">
+                            <label for="relationships">Relaciones</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="self-esteem" value="self-esteem">
+                            <label for="self-esteem">Autoestima</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="identity" value="identity">
+                            <label for="identity">Identidad</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="work" value="work">
+                            <label for="work">Estrés laboral</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="eating" value="eating">
+                            <label for="eating">Trastornos alimenticios</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="addiction" value="addiction">
+                            <label for="addiction">Adicciones</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="therapy-topics" id="other" value="other">
+                            <label for="other">Otro</label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-step">Anterior</button>
+                        <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-3">
+                    <h2>¿Qué tipo de enfoque terapéutico prefieres?</h2>
+                    <p class="form-description">No te preocupes si no estás seguro/a, esta información nos ayuda a hacer mejores coincidencias.</p>
+                    <div class="radio-cards">
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-approach" id="cbt" value="cbt" checked>
+                            <label for="cbt">
+                                <h3>Terapia Cognitivo-Conductual</h3>
+                                <p>Enfocada en cambiar patrones de pensamiento y comportamiento negativos.</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-approach" id="psychodynamic" value="psychodynamic">
+                            <label for="psychodynamic">
+                                <h3>Terapia Psicodinámica</h3>
+                                <p>Explora cómo las experiencias pasadas influyen en los pensamientos y comportamientos actuales.</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-approach" id="humanistic" value="humanistic">
+                            <label for="humanistic">
+                                <h3>Terapia Humanista</h3>
+                                <p>Centrada en el crecimiento personal y la autorrealización.</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-approach" id="integrative" value="integrative">
+                            <label for="integrative">
+                                <h3>Terapia Integrativa</h3>
+                                <p>Combina diferentes enfoques según las necesidades individuales.</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="therapy-approach" id="not-sure" value="not-sure">
+                            <label for="not-sure">
+                                <h3>No estoy seguro/a</h3>
+                                <p>Prefiero que me recomienden en base a mis otras respuestas.</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-step">Anterior</button>
+                        <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-4">
+                    <h2>¿Tienes alguna preferencia para tu terapeuta?</h2>
+                    <p class="form-description">Todos nuestros terapeutas son profesionales calificados, pero entendemos que puedas tener preferencias específicas.</p>
+                    
+                    <div class="form-group">
+                        <label>Género del terapeuta</label>
+                        <div class="radio-buttons">
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-gender" id="gender-female" value="female">
+                                <label for="gender-female">Mujer</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-gender" id="gender-male" value="male">
+                                <label for="gender-male">Hombre</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-gender" id="gender-any" value="any" checked>
+                                <label for="gender-any">Sin preferencia</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Experiencia mínima</label>
+                        <div class="radio-buttons">
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-experience" id="experience-any" value="any" checked>
+                                <label for="experience-any">Sin preferencia</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-experience" id="experience-3" value="3+">
+                                <label for="experience-3">3+ años</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-experience" id="experience-5" value="5+">
+                                <label for="experience-5">5+ años</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-experience" id="experience-10" value="10+">
+                                <label for="experience-10">10+ años</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Idioma adicional (además de español)</label>
+                        <div class="radio-buttons">
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-language" id="language-any" value="any" checked>
+                                <label for="language-any">Sin preferencia</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-language" id="language-english" value="english">
+                                <label for="language-english">Inglés</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-language" id="language-portuguese" value="portuguese">
+                                <label for="language-portuguese">Portugués</label>
+                            </div>
+                            <div class="radio-button">
+                                <input type="radio" name="therapist-language" id="language-french" value="french">
+                                <label for="language-french">Francés</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-step">Anterior</button>
+                        <button type="button" class="btn btn-primary next-step">Siguiente</button>
+                    </div>
+                </div>
+
+                <div class="form-step" id="step-5">
+                    <h2>Detalles finales</h2>
+                    <p class="form-description">Para ofrecerte los mejores resultados, necesitamos un poco más de información.</p>
+                    
+                    <div class="form-group">
+                        <label for="availability">¿Cuándo prefieres tener tus sesiones?</label>
+                        <select id="availability" name="availability" class="form-select">
+                            <option value="">Selecciona tu disponibilidad preferida</option>
+                            <option value="morning">Mañanas (8:00 - 12:00)</option>
+                            <option value="afternoon">Tardes (12:00 - 17:00)</option>
+                            <option value="evening">Noches (17:00 - 21:00)</option>
+                            <option value="weekend">Fines de semana</option>
+                            <option value="flexible">Soy flexible</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="expected-frequency">¿Con qué frecuencia te gustaría tener sesiones?</label>
+                        <select id="expected-frequency" name="expected-frequency" class="form-select">
+                            <option value="">Selecciona la frecuencia deseada</option>
+                            <option value="weekly">Una vez por semana</option>
+                            <option value="biweekly">Cada dos semanas</option>
+                            <option value="monthly">Una vez al mes</option>
+                            <option value="as-needed">Según sea necesario</option>
+                            <option value="not-sure">No estoy seguro/a</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="previous-therapy">¿Has estado en terapia antes?</label>
+                        <select id="previous-therapy" name="previous-therapy" class="form-select">
+                            <option value="">Selecciona una opción</option>
+                            <option value="never">Nunca he estado en terapia</option>
+                            <option value="currently">Estoy actualmente en terapia</option>
+                            <option value="recently">He estado en terapia en los últimos 2 años</option>
+                            <option value="long-ago">He estado en terapia hace más de 2 años</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="additional-info">¿Hay algo más que quieras que sepamos para encontrar el terapeuta ideal?</label>
+                        <textarea id="additional-info" name="additional-info" rows="4" placeholder="Información adicional que pueda ayudarnos a encontrar el terapeuta adecuado para ti..."></textarea>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn btn-outline prev-step">Anterior</button>
+                        <button type="submit" class="btn btn-primary">Encontrar Terapeutas</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="src/images/logo.svg" alt="RED Logo" class="footer-logo-img">
+                    <p>Terapia digital para todos</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Plataforma</h3>
+                        <ul>
+                            <li><a href="#">Cómo Funciona</a></li>
+                            <li><a href="#">Para Clientes</a></li>
+                            <li><a href="#">Para Terapeutas</a></li>
+                            <li><a href="#">Precios</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Empresa</h3>
+                        <ul>
+                            <li><a href="#">Sobre Nosotros</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Términos de Servicio</a></li>
+                            <li><a href="#">Política de Privacidad</a></li>
+                            <li><a href="#">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 RED Digital Therapy Platform. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/scripts/main.js"></script>
+    <script src="src/scripts/matching.js"></script>
+</body>
+</html>

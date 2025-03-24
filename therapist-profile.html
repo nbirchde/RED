@@ -150,43 +150,80 @@
                 <div class="profile-sidebar">
                     <div class="sidebar-card booking-card">
                         <h2>Reserva una Sesión</h2>
-                        <div class="session-types">
-                            <div class="session-type">
-                                <input type="radio" name="session-type" id="intro-session" checked>
-                                <label for="intro-session">
-                                    <h3>Sesión Introductoria</h3>
-                                    <p>30 minutos • Gratuita</p>
-                                </label>
-                            </div>
-                            <div class="session-type">
-                                <input type="radio" name="session-type" id="standard-session">
-                                <label for="standard-session">
-                                    <h3>Sesión Estándar</h3>
-                                    <p>50 minutos • $60 USD</p>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="calendar-preview">
-                            <h3>Próximas Disponibilidades</h3>
-                            <div class="availability-dates">
-                                <div class="date-option">
-                                    <p class="date">Lunes, 24 Mar</p>
-                                    <p class="times">10:00, 14:30</p>
+                        <form id="booking-form">
+                            <div class="session-types">
+                                <div class="session-type">
+                                    <input type="radio" name="session-type" id="session-intro" value="intro" checked>
+                                    <label for="session-intro">
+                                        <h3>Sesión Introductoria</h3>
+                                        <p>30 minutos • Gratuita</p>
+                                    </label>
                                 </div>
-                                <div class="date-option">
-                                    <p class="date">Martes, 25 Mar</p>
-                                    <p class="times">9:00, 13:00, 17:30</p>
-                                </div>
-                                <div class="date-option">
-                                    <p class="date">Jueves, 27 Mar</p>
-                                    <p class="times">11:30, 16:00</p>
+                                <div class="session-type">
+                                    <input type="radio" name="session-type" id="session-standard" value="standard">
+                                    <label for="session-standard">
+                                        <h3>Sesión Estándar</h3>
+                                        <p>50 minutos • 60 USD</p>
+                                    </label>
                                 </div>
                             </div>
-                            <a href="#" class="btn btn-secondary">Ver calendario completo</a>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-large btn-block">Reservar Ahora</a>
+                            <div class="calendar-preview">
+                                <h3>Próximas Disponibilidades</h3>
+                                <div class="availability-dates">
+                                    <!-- Default dates if database doesn't populate them -->
+                                    <div class="date-option">
+                                        <p class="date">Lunes, 24 Mar</p>
+                                        <p class="times">10:00 • 14:30</p>
+                                    </div>
+                                    <div class="date-option">
+                                        <p class="date">Martes, 25 Mar</p>
+                                        <p class="times">9:00 • 13:00 • 17:30</p>
+                                    </div>
+                                    <div class="date-option">
+                                        <p class="date">Jueves, 27 Mar</p>
+                                        <p class="times">11:30 • 16:00</p>
+                                    </div>
+                                </div>
+                                <div class="time-selection" style="display: none;">
+                                    <!-- Time selection will appear here after a date is selected -->
+                                </div>
+                            </div>
+                            <button type="submit" id="book-button" class="btn btn-primary btn-large btn-block" disabled>Reservar Cita</button>
+                        </form>
                     </div>
 
+                    <div class="sidebar-card payment-container" style="display: none;">
+                        <h2>Procesar Pago</h2>
+                        <div class="payment-summary">
+                            <!-- Payment summary will be populated by profile.js -->
+                        </div>
+                        <form id="payment-form">
+                            <div class="form-group">
+                                <label for="card-name">Nombre en la tarjeta</label>
+                                <input type="text" id="card-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Información de la tarjeta</label>
+                                <div id="card-element" class="card-input">
+                                    <!-- Stripe Card Element will be inserted here -->
+                                    <div class="card-placeholder">
+                                        <input type="text" placeholder="Número de tarjeta" class="card-number">
+                                        <div class="card-details">
+                                            <input type="text" placeholder="MM/AA" class="card-expiry">
+                                            <input type="text" placeholder="CVC" class="card-cvc">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="card-errors" class="card-errors" role="alert"></div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-large btn-block">Completar Pago</button>
+                        </form>
+                    </div>
+
+                    <div class="booking-confirmation" style="display: none;">
+                        <!-- Confirmation message will be populated by profile.js -->
+                    </div>
+                    
                     <div class="sidebar-card contact-card">
                         <h2>Contactar a Isabel</h2>
                         <p>¿Tienes preguntas antes de reservar?</p>
@@ -239,6 +276,16 @@
         </div>
     </footer>
 
+    <!-- Database module -->
+    <script src="src/scripts/db/database.js"></script>
+    <!-- Stripe SDK (for payment integration) -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Main and profile scripts -->
     <script src="src/scripts/main.js"></script>
+    <script src="src/scripts/profile.js"></script>
+    <!-- Test script -->
+    <script src="src/scripts/tests.js"></script>
+    <!-- Direct test script -->
+    <script src="src/scripts/direct-test.js"></script>
 </body>
 </html>

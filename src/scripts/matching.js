@@ -72,23 +72,37 @@ document.addEventListener('DOMContentLoaded', function() {
         // Update progress bar and steps
         updateProgressBar();
         
-        // Scroll to the top of the form container instead of the entire form
-        // This prevents jumping to the bottom of the page
-        const scrollOptions = { 
-            behavior: 'smooth',
-            block: 'start' 
-        };
-        
-        // Smoothly scroll the question into view rather than the entire form
-        if (formContainer) {
-            formContainer.scrollIntoView(scrollOptions);
-        } else {
-            // Fallback to the previous behavior if container not found
-            const questionElement = steps[currentStep];
-            if (questionElement) {
-                questionElement.scrollIntoView(scrollOptions);
+        // Scroll to the current step with an offset to account for the fixed header
+        // This provides a better user experience with proper spacing
+        setTimeout(() => {
+            const scrollOptions = { 
+                behavior: 'smooth',
+                block: 'start' 
+            };
+            
+            // Calculate the offset (height of header + some padding)
+            const headerHeight = document.querySelector('.site-header')?.offsetHeight || 80;
+            const scrollPadding = 20;
+            
+            // Scroll to container with offset
+            if (formContainer) {
+                const containerTop = formContainer.getBoundingClientRect().top + window.pageYOffset;
+                window.scrollTo({
+                    top: containerTop - headerHeight - scrollPadding,
+                    behavior: 'smooth'
+                });
+            } else {
+                // Fallback to scrolling the current step element
+                const questionElement = steps[currentStep];
+                if (questionElement) {
+                    const elementTop = questionElement.getBoundingClientRect().top + window.pageYOffset;
+                    window.scrollTo({
+                        top: elementTop - headerHeight - scrollPadding,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
+        }, 50); // Small delay to ensure DOM is updated
     }
     
     // Update progress bar and steps indicators
